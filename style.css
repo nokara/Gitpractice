@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --grey: #5C7073;
+    --darkgrey:rgb(47, 79, 79);
+    --black: #020700;
+    --lightpink: #DCCDD2;
+    --maroon: #731D2C;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+#navbar{
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    width: 100%;
+    background-color: darkslategrey;
+    z-index:1;
+}
+
+
+.navlist {
+    display: flex;
+    
+}
+
+.navlist a{
+    display: block;
+    font-size: 1.25em;
+    padding: .75em;
+    color: white;
+}
+
+.navlist a:hover{
+    color: var(--lightpink);
+    transform: translateY(-3px);
+}
+
+ul {
+    list-style-type: none;
+    
+}
+
+
+ a{
+     text-decoration: none;
+     color: white;
+     
+ }
+
+ a:hover {
+    text-shadow: 2px 2px var(--black);
+ }
+
+
+h1 {
+    color: var(--maroon);
+    font-size: 3rem;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 1.5em;
+    font-size: 2rem;
+    text-decoration: underline overline;
+}
+
+p {
+    color: var(--grey);
+}
+
+
+#subtitle{
+    font-size: 2rem;
+}
+#welcome-section {
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects {
+background-color: white;
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.project-tile {
+    opacity: 0.75;
+}
+
+.project-tile:hover {
+    opacity: 1;
+}
+
+img {
+    width: 300px;
+    border-radius: 5%;
+}
+
+figure {
+    margin: 2rem;
+
+}
+
+figcaption {
+    text-align: center;
+    background-color: var(--darkgrey);
+    color: white;
+    margin: -1.50em 2em 0px 2em;
+    padding: 8px;
+    position: relative;
+}
+
+
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 220px;
+    background-color: darkslategrey;
+    color: white;
+}
+
+
+.contact-details {
+    font-size: 1.5rem;
+}
+
+
+.talk {
+    text-align: center;
+}
+
+.talk > h2 {
+    font-size: 3rem;
+}
+
+.talk > p {
+    font-size: 1.5rem;
+    
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 980px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+@media (max-width: 460px) {
+    html {
+        font-size: 50%;
+    }
+}
