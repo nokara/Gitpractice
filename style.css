@@ -11,9 +11,14 @@
     --maroon: #731D2C;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
+
 
 
 #navbar{
