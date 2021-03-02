@@ -41,7 +41,7 @@ let my Array2 = [42, "Bob", myBool, ANSWER, true]
 myArray2.length
 
 
-//Objects - order doesn't matter like it does in an array
+//Objects - order doesn't matter like it does in an array. full of properties.
 const myCar = {
     make: "Chevrolet",
     color: "Red",
@@ -49,7 +49,7 @@ const myCar = {
     vin: "3809y40ndsopj320",
 };
 
-//add doors (will be randomly inserted)
+//adding a property. add doors (will be randomly inserted)
 myCar.numDoors = 2
 
 //more complex Objects
@@ -80,3 +80,18 @@ sumTwoThings('4', 5) // "45". Strings will make the number a string. cannot add 
 sumTwoThings('4',{foo: 'bar'}) //"4[object Object]"
 sumTwoThings('4', myFunction) //"4function my Function(){return 'My greeting to you...'}"
 
+//ARROW FUNCTIONS
+//Takes parameters and returns what is on the right side of the arrow.
+//for the array 1, call the find function,
+
+/* EXAMPLE
+const array1 [ 5, 12, 8, 140, 144];
+const found =array1.find(element => element > 10)
+ console.log(found);
+ ---output should be 12 */
+
+//no parameters, simplest arrow function
+ const thefunction =() => "I am awesome"
+
+ // a higher order function is a function that accepts another function as a parameter.
+// filter, map and reduce are the most popular, but forEach, every, find, and some are also HOFs
