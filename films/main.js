@@ -18,7 +18,7 @@ let title = films[i].title
 let figure = document.createElement('figure')
 let figCaption = document.createElement('figcaption')
 let newImage = document.createElement('img')
-newImage.src = 'https://starwars-visualguide.com/assets/img/films/${i + 1}.jpg'
+newImage.src = `https://starwars-visualguide.com/assets/img/films/${i + 1}.jpg`
 figCaption.textContent = foundFilm.title
 
 
