@@ -9,18 +9,27 @@ itemTwo.textContent = films[1].title
 
 //console.log(films[0],title)
 
-let titleList = document.querySelector('.titleList')
+let movieList = document.querySelector('.movieList')
 
-for (let i = 0; i < films.legnth; i++) {
+for (let i = 0; i < films.length; i++) {
     const foundFilm = films.find(film => getLastNumber(film.url) === (i + 1))
 
 let title = films[i].title
-let newItem = document.createElement('li')
-newItem.textContent = title
-titlelist.appendChild(newItem)
+let figure = document.createElement('figure')
+let figCaption = document.createElement('figcaption')
+let newImage = document.createElement('img')
+newImage.src = 'https://starwars-visualguide.com/assets/img/films/${i + 1}.jpg'
+figCaption.textContent = foundFilm.title
+
+
+figure.appendChild(newImage)
+figure.appendChild(figCaption)
+movieList.appendChild(figure)
 
 
 console.log(foundFilm)
+}
+
 
 function getLastNumber(url) {
     let end = url[url.length - 2]
