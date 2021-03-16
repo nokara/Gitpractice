@@ -4,24 +4,29 @@ const mainContent = document.querySelector('#main')
 
 const mainHeader = document.createElement('header')
 
-const maleButton = document.createElement('button')
-maleButton.textcontent = 'Male Characters'
-maleButton.addEventListener('click', () =>{
-    populateDOM(maleCharacters)
-})
-
-
-mainHeader.appendChild(maleButton)
 document.body.insertBefore(mainHeader, mainContent)
+
+const maleButton = document.createElement('button')
+maleButton.textContent = 'Male Characters'
+maleButton.addEventListener('click', () => populateDOM(maleCharacters))
+mainHeader.appendChild(maleButton)
+
+const femaleButton = document.createElement('button')
+femaleButton.textContent = 'Female Characters'
+femaleButton.addEventListener('click', () => populateDOM(femaleCharacters))
+mainHeader.appendChild(femaleButton)
+
 
 const maleCharacters = people.filter(person => person.gender === 'male')
 const femaleCharacters = people.filter(person => person.gender === 'female')
 const otherCharacters = people.filter(person => {
-    if (person.gender === 'n/a' || person.gender === 'none')
+    if (person.gender === 'n/a' || person.gender === 'none') {
         return person
+    }
 })
 
 function populateDOM(characters) {
+    removeChildren(mainContent)
     characters.forEach(person => {
         const charFigure = document.createElement('figure')
         const charImg = document.createElement('img')
@@ -45,3 +50,13 @@ function getLastNumber(url) {
     }
     return url.slice(start, end)
 }
+
+function removeChildren(container) {
+    while (container.firstChild){
+container.removeChild(container.firstChild)
+    }
+}
+
+/* while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  } */
