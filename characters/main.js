@@ -22,7 +22,7 @@ const femaleCharacters = people.filter(person => person.gender === 'female')
 const otherCharacters = people.filter(person => {
     if (person.gender === 'n/a' || person.gender === 'none') {
         return person
-    }
+    } //TODO: include Jabba's gender in the otherCharacters if condition
 })
 
 function populateDOM(characters) {

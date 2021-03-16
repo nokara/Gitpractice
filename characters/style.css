@@ -10,4 +10,10 @@
 
 figure > img {
     height: 200px;
+    border-radius: 10px;
+    margin: 1.5em;
+   
 }
+
+
+/* Make pictures pretty
