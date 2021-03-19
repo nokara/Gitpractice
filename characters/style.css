@@ -6,13 +6,37 @@
 #main {
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 figure > img {
     height: 200px;
     border-radius: 10px;
-    margin: 1.5em;
+    margin: 1.2em 1.5em .2em;
    
+}
+
+figcaption {
+    text-align: center;
+    color: rgb(15, 15, 116);
+
+}
+
+h1 {
+  text-align: center; 
+  color: rgb(5, 99, 99) 
+}
+
+button {
+    padding: .7em;
+    background-color: rgb(203, 228, 147);
+    margin: 0 auto;
+    display: block;
+    color:rgb(42, 66, 18)
+}
+
+html {
+    background-color: beige;
 }
 
 
