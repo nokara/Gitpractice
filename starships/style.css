@@ -9,6 +9,12 @@ h1 {
 
 main {
     display: flex;
+    height: 100vh;
+}
+
+img, nav {
+    z-index: 1;
+    position: relative;
 }
 
 li {
@@ -26,4 +32,14 @@ a {
 
 img {
     box-shadow: 0 0 8px 8px black inset;
+}
+
+nav {
+    width: 400px;
+}
+
+.message-text {
+    text-align: center;
+    font-size: x-large;
+    font-weight: 700;
 }

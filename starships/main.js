@@ -6,6 +6,23 @@ const main = document.querySelector('main')
 const navList = document.getElementById('navList')
 //console.log(navList)
 const shipView = document.querySelector('.shipView')
+const dialog = document.querySelector('.modal')
+
+const closeButton = document.querySelector('.modal-close')
+
+
+closeButton.addEventListener('click', () => {
+    dialog.classList.toggle("is-active")
+})
+
+const modalBackground = document.querySelector('.modal-background')
+
+modalBackground.addEventListener('click', () => {
+    dialog.classList.toggle("is-active")
+})
+
+
+
 
 function populateNav() {
     starships.forEach((starship, index) => {
@@ -32,6 +49,7 @@ function populateShipView(shipData,index){
     shipImage.addEventListener('error', () => {
     console.log(`Oops! missing image`)
     shipImage.hidden = true
+    dialog.classList.toggle("is-active")
     })
     shipView.appendChild(shipImage)
 }
