@@ -41,9 +41,7 @@ a {
 }
 
 img {
-   
     margin: 0px 0px 25px 120px;
-
 }
 
 #navList {
@@ -55,4 +53,12 @@ img {
     text-align: center;
     font-size: x-large;
     font-weight: 700;
+}
+
+footer {
+    color:rgb(104, 104, 103);
+    background-color: rgba(15, 15, 15, 0.582);
+text-align: center;
+padding: .4em;
+margin-top: 1em;
 }

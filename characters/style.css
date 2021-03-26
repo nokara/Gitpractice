@@ -11,11 +11,14 @@
 }
 
 figure > img {
-    height: 200px;
-    border-radius: 10px;
+    height: 250px;
+    border-radius: 100px;
     margin: 1.2em 1.5em .2em;
-   
+   border: 5px solid rgb(203, 228, 147);
 }
+
+
+
 
 figcaption {
     text-align: center;
@@ -32,7 +35,7 @@ h1 {
 
 button {
     font-family: 'Montserrat', sans-serif;
-    padding: .7em;
+    padding: 1em;
     background-color: rgb(203, 228, 147);
     margin: 1em;
     color:rgb(42, 66, 18);
@@ -44,5 +47,15 @@ button {
 html {
     background-color: beige;
 }
+
+footer {
+    font-family: Montserrat;
+    color:rgb(160, 196, 84);
+    background-color: rgb(247, 235, 176);
+text-align: center;
+padding: .4em;
+margin-top: 1em;
+}
+
 
 
