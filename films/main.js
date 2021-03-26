@@ -15,7 +15,7 @@ for (let i = 0; i < films.length; i++) {
     const foundFilm = films.find(film => getLastNumber(film.url) === (i + 1))
     let figure = document.createElement('figure')
     let newImage = document.createElement('img')
-    let figCaption = document.createElement('figCaption')
+    let figCaption = document.createElement('figcaption')
     newImage.src = `https://starwars-visualguide.com/assets/img/films/${i + 1}.jpg`
     //figCaption.textContent = foundFilm.title
     

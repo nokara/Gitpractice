@@ -26,10 +26,12 @@ modalBackground.addEventListener('click', () => {
 
 function populateNav() {
     starships.forEach((starship, index) => {
-        // let i = index
-        // console.log(i)
         let anchorWrap = document.createElement('a')
         anchorWrap.href = '#'
+       anchorWrap.addEventListener('click', () =>{
+           populateShipView(starship)
+       })
+       
         let listItem = document.createElement('li')
         listItem.textContent = starship.name
         //console.log(listItem)

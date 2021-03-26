@@ -6,7 +6,8 @@
 #main {
     display: flex;
     flex-wrap: wrap;
-    
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 figure > img {
@@ -18,21 +19,26 @@ figure > img {
 
 figcaption {
     text-align: center;
-    color: rgb(15, 15, 116);
+    color: rgb(5, 99, 99)
 
 }
 
 h1 {
   text-align: center; 
-  color: rgb(5, 99, 99) 
+  color: rgb(5, 99, 99) ;
+  font-family:'Dela Gothic One', cursive;
+  font-size: 36px;
 }
 
 button {
+    font-family: 'Montserrat', sans-serif;
     padding: .7em;
     background-color: rgb(203, 228, 147);
-    margin: 0 auto;
-    display: block;
-    color:rgb(42, 66, 18)
+    margin: 1em;
+    color:rgb(42, 66, 18);
+    border-radius: 5px;
+    border-color:rgb(42, 66, 18);
+    margin-left: 15em;
 }
 
 html {
@@ -40,4 +46,3 @@ html {
 }
 
 
-/* Make pictures pretty

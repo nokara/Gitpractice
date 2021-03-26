@@ -5,20 +5,30 @@
 
 h1 {
     color: white;
+    margin-left: 20px;
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 36px;
+    margin-bottom: .75em;
 }
 
 main {
     display: flex;
-    height: 100vh;
+    height: 100;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 img, nav {
     z-index: 1;
     position: relative;
+    
 }
 
 li {
 list-style-type: none;
+color:cornflowerblue;
+background-color: rgba(12, 22, 34, 0.75);
+padding: 0em 0em .2em 1em;
 }
 
 body {
@@ -31,11 +41,14 @@ a {
 }
 
 img {
-    box-shadow: 0 0 8px 8px black inset;
+   
+    margin: 0px 0px 25px 120px;
+
 }
 
-nav {
+#navList {
     width: 400px;
+    margin-left: 20px;
 }
 
 .message-text {
