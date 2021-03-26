@@ -17,7 +17,7 @@ for (let i = 0; i < films.length; i++) {
     let newImage = document.createElement('img')
     let figCaption = document.createElement('figcaption')
     newImage.src = `https://starwars-visualguide.com/assets/img/films/${i + 1}.jpg`
-    //figCaption.textContent = foundFilm.title
+    figCaption.textContent = foundFilm.title
     
     figure.appendChild(newImage)
     figure.appendChild(figCaption)
