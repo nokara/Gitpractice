@@ -95,3 +95,46 @@ const found =array1.find(element => element > 10)
 
  // a higher order function is a function that accepts another function as a parameter.
 // filter, map and reduce are the most popular, but forEach, every, find, and some are also HOFs
+
+//Filter method example. Filter returns an array of all elements that "pass the test"
+
+const pilots = [
+    {
+      id: 2,
+      name: "Wedge Antilles",
+      faction: "Rebels"
+    },
+    {
+      id: 8,
+      name: "Ciena Ree",
+      faction: "Empire"
+    },
+    {
+      id: 40,
+      name: "Iden Versio",
+      faction: "Empire"
+    },
+    {
+      id: 66,
+      name: "Thane Kyrell",
+      faction: "Rebels"
+    }
+  ];
+
+  //filtering the faction properties to only return "rebels." 
+  //READ first part: a const called rebels is assigned the value of..the pilots array and, we call .filter on it, and then we pass in our function where we take the singular item (we make up the name we want to call it) : "pilot"
+   //READ second part, body of arrow function. If pilot's faction property is equal to the string "rebels" then put it into our (const) "rebels" array
+  const rebels = pilots.filter((pilot) => pilot.faction === "Rebels");
+  //OR this. if you have multiple lines, include a return statement
+  const empire = pilots.filter((pilot) => {
+    return pilot.faction === "Empire";
+  });
+
+
+  // Array helper method 'map' makes a new array "pilotsWithDate"
+//toLocaleDateString is the date format. also, .map adds a new property. in this case we added the "date" property
+const pilotsWithDate = pilots.map((pilot) => {
+    let date = new Date();
+    pilot.date = date.toLocaleDateString("en-US");
+    return pilot;
+  });
