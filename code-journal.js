@@ -158,3 +158,48 @@ const pilotsWithDate = pilots.map((pilot) => {
     };
     return filmObj;
   });
+
+
+
+  //REDUCE will give you one element from the array that you want to calculate
+  
+list of pilots here:
+
+
+//take the accumulated value and add it to ever pilot that comes through as you loop through the years property starting w/ zero?
+  const totalYears = pilots.reduce((acc, pilot) => pilot.years, 0) //accumulates pilot years
+
+
+  //find out who is the most experienced pilot?
+  //accumulator is named oldest
+ 
+  const mostExpPilot = pilots.reduce((oldest, pilot)=> {
+      return (oldest.years || 0) > pilot.years ? oldest : pilot
+  }, {})
+
+//Ternary operator syntax: condition ? exprIfTru : expIfFalse
+// (?=true, :=false)
+
+Another list of personell
+
+//FILTER
+let jediPersonnel = personnel.filter(person => person.isForceUser)
+//if isForceUser is true, then it will add that person to the list
+
+//MAP
+let jediScores = jediPersonnel.map(jedi => jedi.pilotingScore + jedi.shootingScore)
+//piloting score + jedi score
+
+//REDUCE, add all the total jedi scores
+//TODO: how to read this line?
+let totalJediScore = jediScores.reduce((acc, score)=> acc + score, 0)
+
+//CHAIN filter, map, and reduce
+const totalJediScoreChained = personnel
+.filter(person => person.isForceUser)
+.map(jedi => jedi.pilotingScore + jedi.shootingScore)
+.reduce((acc, score) => acc + score, 0)
+
+//combine teranary operator
+const totalJediScoreReduced = personnel.reduce((acc, person) => person.isForceUser ? acc + 
+person.pilotingScore + person.shootingScore : acc, 0)
