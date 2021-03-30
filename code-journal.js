@@ -138,3 +138,23 @@ const pilotsWithDate = pilots.map((pilot) => {
     pilot.date = date.toLocaleDateString("en-US");
     return pilot;
   });
+
+  let filmURLs = [
+    "https://swapi.co/api/films/",
+    "https://swapi.co/api/films/5/",
+    "https://swapi.co/api/films/4/this one is longer... even longer",
+    "https://swapi.co/api/films/6/",
+    "https: ",
+    "https://swapi.co/api/films/1/"
+  ];
+  
+  const filmLengths = filmURLs.map((filmURL) => filmURL.length);
+  
+  //below, just addin a property to filmObj
+  const filmPlusMore = filmURLs.map((filmURL) => {
+    let filmObj = {
+      index: filmURL,
+      foo: "Bar"
+    };
+    return filmObj;
+  });
