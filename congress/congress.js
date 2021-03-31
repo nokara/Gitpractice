@@ -6,7 +6,7 @@ const seniorityButton = document.querySelector{"#seniorityButton"}
 const birthdayButton = document.querySelector{"#birthdayButton"}
 
 
-function populateCongressDive(simplifiedList) {
+function populateCongressDiv(simplifiedList) {
     simplifiedList.forEach(person => {
         let personDiv = document.createElement('div')
         personDiv.className = 'figureDiv' 
@@ -26,17 +26,17 @@ function populateCongressDive(simplifiedList) {
 
 
 function getSimplifiedPeople(peopleList) {
-    return peopleList.map(person=> {
-        let middleName = person.middle_name ? ` ${person.middle_name}` : ''
+    return peopleList.map(person => {
+        let middleName = person.middle_name ? ` ${person.middle_name}` : ``
         return {
             id: person.id,
-            name: "${person.first_name} ${middleName} ${person.last_name}"
-            //imgUrl: `url` change pixel amount
+            name: `${person.first_name} ${middleName} ${person.last_name}`
+            imgURL: `https://www.govtrack.us/static/legislator-photos/${person.govtrack_id}-100px.jpeg`
         }
     })
 }
 
-populateCongressDive(getSimplifiedPeople(representatives))
+populateCongressDiv(getSimplifiedPeople(representatives))
 
 
 
