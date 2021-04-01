@@ -9,5 +9,16 @@
 }
 
 .figureDiv {
-    margin: 1em;
+    margin: 6px;
+    padding: 6px;
+    border: 1px red solid;
+    box-shadow: 3px 3px black;
+}
+
+figure {
+width: 100px;
+}
+
+figcaption {
+    text-align: center;
 }
