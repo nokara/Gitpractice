@@ -17,7 +17,7 @@ async function getAPIData(url) {
 }
 
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon/7`).then(
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then(
         (data) => {
             for (const singlePokemon of data.results) {
                 populatePokeCard(singlePokemon)
@@ -29,8 +29,16 @@ function loadPage() {
 function populatePokeCard(singlePokemon) {
     //use same html as in the CodPen Card flip example
     letpokeScene = document.createElement('div')
+    pokeScene.className = 'scene'
     letpokeCard = document.createElement('div')
+    populatePokeCard.className = 'card'
     //make card front and card back
     //append them all to the pokeGrid
     console.log(singlePokemon)
+}
+
+
+function populatePokeCardFront() {
+    let pokeFront = document.createElement('div')
+    //pokeFront.className = 'card'
 }
