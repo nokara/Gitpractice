@@ -5,7 +5,7 @@
 }
 
 h1 {
-    color: red;
+    color:yellow;
 }
 
 html {
@@ -13,8 +13,9 @@ html {
 }
 
 button {
-    background-color: yellow;
-    color: navy;
+    background-color: whitesmoke;
+    color:cadetblue;
+    padding: .4em;
 }
 
 .pokeGrid {
@@ -26,9 +27,9 @@ button {
 .scene {
     width: 200px;
     height: 260px;
-    border: 1px solid teal;
     margin: 8px;
     perspective: 600px;
+
 }
 
 .card {
@@ -54,10 +55,16 @@ button {
   }
 
   .card__face--front {
-    background: red;
+    background: whitesmoke;
+    border: 4px solid yellow;
+    border-radius: 10px;
   }
   
   .card__face--back {
-    background: blue;
+    background: whitesmoke;
+    border: 4px solid yellow;
+    border-radius: 10px;
     transform: rotateY(180deg);
   }
+
+  
