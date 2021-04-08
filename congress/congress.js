@@ -1,12 +1,42 @@
 import { senators } from '../data/senators.js'
 import { representatives } from '../data/representatives.js'
 
-const congressGrid = document.querySelector{'.congressGrid'}
-const seniorityButton = document.querySelector{"#seniorityButton"}
-const birthdayButton = document.querySelector{"#birthdayButton"}
+//console.log(representatives[5]["party"])
+let republicans = representatives.filter(rep => rep["party"] == "R")
+let democrats = representatives.filter(rep => rep["party"] == "D")
+let independents = representatives.filter(rep => rep["party"] == "ID")
 
 
+const congressGrid = document.querySelector('.congressGrid')
+const seniorityButton = document.querySelector("#seniorityButton")
+const birthdayButton = document.querySelector("#birthdayButton")
+
+
+///// button stuff ///////
+const repubButton = document.querySelector('#republicans')
+const demButton = document.querySelector('#democrats')
+const inButton = document.querySelector('#independents')
+const bdayButton = document.querySelector('#birthdaybutton')
+const senButton = document.querySelector('#seniorityButton')
+
+repubButton.addEventListener('click', () => {
+    //emptySection()
+    populateCongressDiv(getSimplifiedPeople(republicans))
+})
+demButton.addEventListener('click', () => {
+    //emptySection()
+    console.log("dem button")
+    populateCongressDiv(getSimplifiedPeople(democrats))
+})
+demButton.addEventListener('click', () => {
+    //emptySection()
+    populateCongressDiv(getSimplifiedPeople(independents))
+})
+
+
+/////////// functions //////////////
 function populateCongressDiv(simplifiedList) {
+    //emptySection()
     simplifiedList.forEach(person => {
         let personDiv = document.createElement('div')
         personDiv.className = 'figureDiv' 
@@ -30,21 +60,19 @@ function getSimplifiedPeople(peopleList) {
         let middleName = person.middle_name ? ` ${person.middle_name}` : ``
         return {
             id: person.id,
-            name: `${person.first_name} ${middleName} ${person.last_name}`
+            name: `${person.first_name} ${middleName} ${person.last_name}`,
             imgURL: `https://www.govtrack.us/static/legislator-photos/${person.govtrack_id}-100px.jpeg`
         }
     })
 }
+//console.log(getSimplifiedPeople(republicans))
+function emptySection(){
+    while (congressGrid.firstChild) {
+        congressGrid.removeChild(congressGrid.firstChild);
+    }
+}
 
-populateCongressDiv(getSimplifiedPeople(representatives))
 
-
-
-const repubButton = document.querySelector('#republicans')
-
-repubButton.addEventListener('click', () => {
-    showRepublicans()
-})
 
 
 function showRepublicans() {
@@ -58,3 +86,4 @@ function showRepublicans() {
         }
         return smallRepub
     })
+}
