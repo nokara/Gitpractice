@@ -3,6 +3,11 @@
     box-sizing: border-box;
 }
 
+h1 {
+    color: navy;
+    text-align: center;
+}
+
 .congressGrid {
     display: flex;
     flex-wrap: wrap;
