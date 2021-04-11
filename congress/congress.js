@@ -8,16 +8,15 @@ let independents = representatives.filter(rep => rep["party"] == "ID")
 
 
 const congressGrid = document.querySelector('.congressGrid')
-const seniorityButton = document.querySelector("#seniorityButton")
-const birthdayButton = document.querySelector("#birthdayButton")
 
 
 ///// button stuff ///////
 const repubButton = document.querySelector('#republicans')
 const demButton = document.querySelector('#democrats')
 const inButton = document.querySelector('#independents')
-const bdayButton = document.querySelector('#birthdaybutton')
-const senButton = document.querySelector('#seniorityButton')
+const seniorityButton = document.querySelector("#seniorityButton")
+const birthdayButton = document.querySelector("#birthdayButton")
+
 
 repubButton.addEventListener('click', () => {
     //emptySection()

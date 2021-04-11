@@ -8,16 +8,22 @@ h1 {
     text-align: center;
 }
 
+/*body {
+    background-image: https://picsum.photos/id/1073/200/300?blur;
+}*/
+
 .congressGrid {
     display: flex;
     flex-wrap: wrap;
+    float: below;
 }
 
 .figureDiv {
     margin: 6px;
     padding: 6px;
     border: 1px red solid;
-    box-shadow: 3px 3px black;
+    box-shadow: 3px 3px rgb(126, 3, 3);
+
 }
 
 figure {
@@ -26,6 +32,11 @@ width: 100px;
 
 figcaption {
     text-align: center;
+    font-family: playfair-display, serif;
+    font-weight: 600;
+    font-style: normal;
+    margin-top: .2em;
+    color: navy;
 }
 
 
@@ -33,4 +44,27 @@ h1{
     font-family: playfair-display, serif;
     font-weight: 700;
     font-style: normal;
+    margin: .5em;
+    padding: .2em;
+    background-color:rgb(252, 221, 221);
+ }
+
+ button {
+     margin: .2em;
+     padding: .5em;
+    color: navy;
+    background-color: rgb(219, 238, 245);
+    border: .2px solid navy;
+    border-radius: 2px;
+    font-family: playfair-display, serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1em;
+ }
+
+ .buttons {
+     display: flex;
+     flex: wrap;
+     justify-content: space-evenly;
+     
  }
