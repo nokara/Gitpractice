@@ -68,6 +68,10 @@ function populateCardBack(pokemon) {
     return pokeBack
 }
 
+
+
+//backLabel.textContent = `HP: ${pokemon.stats.length}`
+
 function getImageFileName(pokemon) {
     if (pokemon.id < 10) {
         return `00${pokemon.id}`
