@@ -4,30 +4,37 @@
 }
 
 h1 {
-    color: navy;
+    color: rgb(191, 220, 236);
     text-align: center;
+  
 }
 
-/*body {
-    background-image: https://picsum.photos/id/1073/200/300?blur;
-}*/
+body {
+    background-image: url('https://picsum.photos/id/1073/2000/3000?grayscale&blur');
+}
 
 .congressGrid {
     display: flex;
     flex-wrap: wrap;
     float: below;
+    justify-content: center;
+    margin-top: 22px;
 }
 
 .figureDiv {
-    margin: 6px;
+    margin: 12px 8px;
     padding: 6px;
-    border: 1px red solid;
-    box-shadow: 3px 3px rgb(126, 3, 3);
-
+    border: 2px red solid;
+    box-shadow: 3px 3px 2px rgb(126, 3, 3);
+background-color: rgb(225, 239, 247);
 }
 
 figure {
-width: 100px;
+width: 125px;
+}
+
+img {
+    width: 125px;
 }
 
 figcaption {
@@ -46,7 +53,7 @@ h1{
     font-style: normal;
     margin: .5em;
     padding: .2em;
-    background-color:rgb(252, 221, 221);
+    background-color:rgb(21, 22, 97);
  }
 
  button {
