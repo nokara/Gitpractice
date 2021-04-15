@@ -46,6 +46,18 @@ figcaption {
     color: navy;
 }
 
+.fa-republican {
+    color: red;
+}
+
+.fa-democrat {
+    color: blue;
+}
+
+.fa-mitten {
+    color: green;
+}
+
 
 h1{
     font-family: playfair-display, serif;

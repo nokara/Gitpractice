@@ -2,7 +2,6 @@ import { senators } from '../data/senators.js'
 import { representatives } from '../data/representatives.js'
 import { removeChildren } from '../utils/index.js'
 
-//console.log(representatives[5]["party"])
 let republicans = representatives.filter(rep => rep["party"] == "R")
 let democrats = representatives.filter(rep => rep["party"] == "D")
 let independents = representatives.filter(rep => rep["party"] == "ID")
@@ -20,15 +19,12 @@ const seniorityButton = document.querySelector("#seniorityButton")
 
 
 repubButton.addEventListener('click', () => {
-    //emptySection()
     populateCongressDiv(getSimplifiedPeople(republicans))
 })
 demButton.addEventListener('click', () => {
-    //emptySection()
     populateCongressDiv(getSimplifiedPeople(democrats))
 })
 inButton.addEventListener('click', () => {
-    //emptySection()
     populateCongressDiv(getSimplifiedPeople(independents))
 })
 seniorityButton.addEventListener('click', () => senioritySort())
