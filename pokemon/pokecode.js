@@ -1,5 +1,6 @@
 const pokeGrid = document.querySelector('.pokeGrid')
 const loadButton = document.querySelector('.loadPokemon')
+const newButton = document.querySelector('.newPokemon')
 
 loadButton.addEventListener('click', () => {
     loadPage()
@@ -15,6 +16,31 @@ async function getAPIData(url) {
         console.log(error)
     }
 }
+
+class Pokemon {
+    constructor(name, height, weight, abilities, moves) {
+        this.id = 900
+        this.name = name
+        this.height = height
+        this.weight = weight
+        this.abilities = abilities
+        this.moves = moves
+    }
+  }
+
+newButton.addEventListener('click', () => {
+    let pokeName = prompt("What is the name of your new Pokemon?")
+    let pokeHeight = prompt("Pokemon height?")
+    let pokeWeight = prompt("Pokemon weight?")
+    let newPokemon = new Pokemon(
+        pokeName,
+        pokeHeight,
+        pokeWeight,
+        ['eat', 'sleep'],
+        ['study', 'code', 'silence']
+    )
+    populatePokeCard(newPokemon)
+})
 
 function loadPage() {
     getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then(
@@ -37,11 +63,9 @@ function populatePokeCard(singlePokemon) {
     pokeCard.addEventListener('click', () => {
         pokeCard.classList.toggle('is-flipped')
     })
-    // make the card front
+    
     pokeCard.appendChild(populateCardFront(singlePokemon))
-    // make the card back
     pokeCard.appendChild(populateCardBack(singlePokemon))
-    // append them all to pokeGrid
     pokeScene.appendChild(pokeCard)
     pokeGrid.appendChild(pokeScene)
 }
@@ -53,7 +77,7 @@ function populateCardFront(pokemon) {
     let frontLabel = document.createElement('p')
     frontLabel.textContent = pokemon.name
     let frontImage = document.createElement('img')
-    frontImage.src = `images/${getImageFileName(pokemon)}.png`
+    frontImage.src = `images/${getImageFileName(pokemon)}.png` 
     pokeFront.appendChild(frontImage)
     pokeFront.appendChild(frontLabel)
     return pokeFront
@@ -77,5 +101,17 @@ function getImageFileName(pokemon) {
         return `00${pokemon.id}`
     } else if (pokemon.id > 9 && pokemon.id < 100) {
         return `0${pokemon.id}`
-    }
+    } //else return `images/pokeball.png`
 }
+
+//Thor's way to get images
+/*function getImageFileName(pokemon) {
+    let pokeId
+    if (pokemon.id < 10) pokeId = `00${pokemon.id}`
+    if (pokemon.id > 9 && pokemon.id < 100) pokeId = `0${pokemon.id}`
+    if (pokemon.id > 99 && pokemon.id < 810) pokeId = pokemon.id
+    if (pokemon.id === 900) {
+        return `images/pokeball.png`
+    }
+    return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`
+}*/

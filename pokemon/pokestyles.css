@@ -4,20 +4,63 @@
     box-sizing: border-box;
 }
 
+#navbar{
+  display: flex;
+  justify-content: flex-end;
+  
+  width: 100%;
+  background-color: darkslategrey;
+  z-index:1;
+  margin: 0;
+}
+
+.navlist {
+  display: flex;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.navlist a{
+  display: block;
+  font-size: 1em;
+  padding: .75em;
+  color: white;
+}
+
+.navlist a:hover{
+  color: var(--lightpink);
+  transform: translateY(-3px);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a{
+   text-decoration: none;
+   color: white;
+}
+
+a:hover {
+  text-shadow: 2px 2px var(--black);
+}
+
+
 h1 {
     color:yellow;
 }
 
 .header {
   display: block;
+  margin-top: 1em;
   margin-left: auto;
   margin-right: auto; 
   width: 45%
+  
 }
 
 html {
     background-color: cadetblue;
-    margin: 1em;
+    margin: 
     font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -27,12 +70,15 @@ button {
     padding: .4em;
     border: solid 3px rgb(84, 109, 189);
     border-radius: 2em;
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2em;   
+  margin: .5em;
   font-family: 'Staatliches';
     font-size: 1em;
+}
+
+.buttons {
+  display: flex;
+     flex: wrap;
+     justify-content: center;
 }
 
 .pokeGrid {
