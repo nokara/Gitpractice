@@ -134,6 +134,7 @@ button {
     transform: rotateY(180deg);
     font-family: 'Noto Sans KR', sans-serif;
     color:rgb(255, 145, 145);
+    background-color: rgb(253, 243, 185);
     padding: 3.2em .5em;
   }
 

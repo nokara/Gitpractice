@@ -139,7 +139,7 @@ figcaption {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 220px;
+    height: 170px;
     background-color: darkslategrey;
     color: white;
 }
@@ -155,12 +155,17 @@ figcaption {
 }
 
 .talk > h2 {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .talk > p {
     font-size: 1.5rem;
     
+}
+
+.contact-details {
+    font-size: 1.2em;
+    padding-bottom: ;
 }
 
 @media (max-width: 1200px) {
