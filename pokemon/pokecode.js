@@ -18,8 +18,7 @@ async function getAPIData(url) {
 }
 
 function populateNewPokemon(singlePokemon) {
-    //console.log(singlePokemon.stats[0])
-    // use the same html as in the CodePen Card flip example
+    //new guy
     let pokeScene = document.createElement('div')
     pokeScene.className = 'scene'
     let pokeCard = document.createElement('div')
@@ -35,6 +34,7 @@ function populateNewPokemon(singlePokemon) {
 }
 
 function newPokemonFront(pokemon) {
+    //new guy
     let pokeFront = document.createElement('div')
     pokeFront.className = 'card__face card__face--front'
     let frontLabel = document.createElement('p')
@@ -47,24 +47,47 @@ function newPokemonFront(pokemon) {
 }
 
 function newPokemonBack(pokemon) {
+    //new guy
     let pokeBack = document.createElement('div')
     pokeBack.className = 'card__face card__face--back'
+
     let backLabel = document.createElement('p')
+    backLabel.textContent = `Moves: ${pokemon.moves}`
    
     let hp = document. createElement('p')
     hp.textContent = `HP: ${pokemon.hp}`
+
+    let types = document.createElement('p')
+    types.textContent = `Type: ${pokemon.type}`
+
+    let attack = document.createElement('p')
+    attack.textContent = `Attack: ${pokemon.attack}`
+
+    let defense = document.createElement('p')
+    defense.textContent = `Defense: ${pokemon.defense}`
+    
+    let ability = document.createElement('p')
+    ability.textContent = `Ability: ${pokemon.abilities}`
+    console.log(pokemon.type)
+
+    pokeBack.appendChild(types)
+    pokeBack.appendChild(ability)
+    pokeBack.appendChild(attack)
+    pokeBack.appendChild(defense)
     pokeBack.appendChild(hp)
+    pokeBack.appendChild(backLabel)
     return pokeBack
 }
 
 
 
 class Pokemon {
-    constructor(name, height, weight, abilities, moves, hp) {
+    constructor(name, type, attack, defense, abilities, moves, hp) {
         this.id = 900
         this.name = name
-        this.height = height
-        this.weight = weight
+        this.type = type
+        this.attack = attack
+        this.defense = defense
         this.abilities = abilities
         this.moves = moves
         this.hp = hp
@@ -73,15 +96,19 @@ class Pokemon {
 
 newButton.addEventListener('click', () => {
     let pokeName = prompt("What is the name of your new Pokemon?")
-    let pokeHeight = prompt("Pokemon height?")
-    let pokeWeight = prompt("Pokemon weight?")
+    let pokeType = prompt("Pokemon's type? (i.e. dark, grass, water, flying, etc.")
+    let pokeAbilities = prompt("Name of ability?")
+    let pokeAttack = prompt("Pokemon attack number?")
+    let pokeDefense = prompt("Pokemon's defense points?")
+    let pokeMoves = prompt("Pokemon's number of moves?")
     let pokeHealth = prompt("Pokemon's health points?")
     let newPokemon = new Pokemon(
         pokeName,
-        pokeHeight,
-        pokeWeight,
-        ['eat', 'sleep'],
-        ['study', 'code', 'silence'],
+        pokeType,
+        pokeAttack,
+        pokeDefense,
+        pokeAbilities,
+        pokeMoves,
         pokeHealth
     )
     console.log(newPokemon)
@@ -102,8 +129,7 @@ function loadPage() {
 }
 
 function populatePokeCard(singlePokemon) {
-    //console.log(singlePokemon.stats[0])
-    // use the same html as in the CodePen Card flip example
+    //console.log(singlePokemon.types[0].type.name)
     let pokeScene = document.createElement('div')
     pokeScene.className = 'scene'
     let pokeCard = document.createElement('div')
@@ -140,7 +166,29 @@ function populateCardBack(pokemon) {
 
     let hp = document.createElement('p')
     hp.textContent = `HP: ${pokemon.stats[0].base_stat}`
+    hp.className = 'hp'
     //console.log(pokemon.stats[0].base_stat)
+
+    let types = document.createElement('p')
+    types.textContent = `Type: ${pokemon.types[0].type.name}`
+    //console.log(pokemon.types[0].type.name)
+
+    let attack = document.createElement('p')
+    attack.textContent = `Attack: ${pokemon.stats[1].base_stat}`
+    //console.log(pokemon.stats[1].base_stat)
+
+    let defense = document.createElement('p')
+    defense.textContent = `Defense: ${pokemon.stats[2].base_stat}`
+    
+
+    let ability = document.createElement('p')
+    ability.textContent = `Ability: ${pokemon.abilities[0].ability.name}`
+    //console.log(pokemon.abilities[0].ability.name)
+
+    pokeBack.appendChild(types)
+    pokeBack.appendChild(ability)
+    pokeBack.appendChild(attack)
+    pokeBack.appendChild(defense)
     pokeBack.appendChild(hp)
     pokeBack.appendChild(backLabel)
     return pokeBack
