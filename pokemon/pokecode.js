@@ -17,14 +17,57 @@ async function getAPIData(url) {
     }
 }
 
+function populateNewPokemon(singlePokemon) {
+    //console.log(singlePokemon.stats[0])
+    // use the same html as in the CodePen Card flip example
+    let pokeScene = document.createElement('div')
+    pokeScene.className = 'scene'
+    let pokeCard = document.createElement('div')
+    pokeCard.className = 'card'
+    pokeCard.addEventListener('click', () => {
+        pokeCard.classList.toggle('is-flipped')
+    })
+    
+    pokeCard.appendChild(newPokemonFront(singlePokemon))
+    pokeCard.appendChild(newPokemonBack(singlePokemon))
+    pokeScene.appendChild(pokeCard)
+    pokeGrid.appendChild(pokeScene)
+}
+
+function newPokemonFront(pokemon) {
+    let pokeFront = document.createElement('div')
+    pokeFront.className = 'card__face card__face--front'
+    let frontLabel = document.createElement('p')
+    frontLabel.textContent = pokemon.name
+    let frontImage = document.createElement('img')
+    frontImage.src = './images/pokeball.png' 
+    pokeFront.appendChild(frontImage)
+    pokeFront.appendChild(frontLabel)
+    return pokeFront
+}
+
+function newPokemonBack(pokemon) {
+    let pokeBack = document.createElement('div')
+    pokeBack.className = 'card__face card__face--back'
+    let backLabel = document.createElement('p')
+   
+    let hp = document. createElement('p')
+    hp.textContent = `HP: ${pokemon.hp}`
+    pokeBack.appendChild(hp)
+    return pokeBack
+}
+
+
+
 class Pokemon {
-    constructor(name, height, weight, abilities, moves) {
+    constructor(name, height, weight, abilities, moves, hp) {
         this.id = 900
         this.name = name
         this.height = height
         this.weight = weight
         this.abilities = abilities
         this.moves = moves
+        this.hp = hp
     }
   }
 
@@ -32,14 +75,18 @@ newButton.addEventListener('click', () => {
     let pokeName = prompt("What is the name of your new Pokemon?")
     let pokeHeight = prompt("Pokemon height?")
     let pokeWeight = prompt("Pokemon weight?")
+    let pokeHealth = prompt("Pokemon's health points?")
     let newPokemon = new Pokemon(
         pokeName,
         pokeHeight,
         pokeWeight,
         ['eat', 'sleep'],
-        ['study', 'code', 'silence']
+        ['study', 'code', 'silence'],
+        pokeHealth
     )
-    populatePokeCard(newPokemon)
+    console.log(newPokemon)
+    populateNewPokemon(newPokemon)
+    //populatePokeCard(newPokemon)
 })
 
 function loadPage() {
@@ -55,6 +102,7 @@ function loadPage() {
 }
 
 function populatePokeCard(singlePokemon) {
+    //console.log(singlePokemon.stats[0])
     // use the same html as in the CodePen Card flip example
     let pokeScene = document.createElement('div')
     pokeScene.className = 'scene'
@@ -71,7 +119,7 @@ function populatePokeCard(singlePokemon) {
 }
 
 function populateCardFront(pokemon) {
-    console.log(pokemon)
+    //console.log(pokemon)
     let pokeFront = document.createElement('div')
     pokeFront.className = 'card__face card__face--front'
     let frontLabel = document.createElement('p')
@@ -88,6 +136,12 @@ function populateCardBack(pokemon) {
     pokeBack.className = 'card__face card__face--back'
     let backLabel = document.createElement('p')
     backLabel.textContent = `Moves: ${pokemon.moves.length}`
+    backLabel.className = 'moves'
+
+    let hp = document.createElement('p')
+    hp.textContent = `HP: ${pokemon.stats[0].base_stat}`
+    //console.log(pokemon.stats[0].base_stat)
+    pokeBack.appendChild(hp)
     pokeBack.appendChild(backLabel)
     return pokeBack
 }
