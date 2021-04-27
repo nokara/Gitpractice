@@ -43,7 +43,7 @@ function populateCongressDiv(simplifiedList) {
         let partyIcon = document.createElement('i')
         if (person.party === 'R') partyIcon.className = 'fas fa-republican'
         if (person.party === 'D') partyIcon.className = 'fas fa-democrat'
-        if (person.party === 'ID') partyIcon.className = 'fas fa-mitten'
+        //if (person.party === 'ID') partyIcon.className = 'fas fa-mitten'
 
         figImg.src = person.imgURL
         figCaption.textContent = person.name
@@ -75,4 +75,20 @@ function senioritySort() {
     populateCongressDiv(getSimplifiedPeople(senators).sort((a, b) => a.seniority - b.seniority).reverse())
 }
 
+//SCROLL
+toTop = document.getElementById("toTop");
 
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction( {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
