@@ -96,7 +96,7 @@ class Pokemon {
 
 newButton.addEventListener('click', () => {
     let pokeName = prompt("What is the name of your new Pokemon?")
-    let pokeType = prompt("Pokemon's type? (i.e. dark, grass, water, flying, etc.")
+    let pokeType = prompt("Pokemon's type? (i.e. dark, grass, water, flying, etc.)")
     let pokeAbilities = prompt("Name of ability?")
     let pokeAttack = prompt("Pokemon attack number?")
     let pokeDefense = prompt("Pokemon's defense points?")
