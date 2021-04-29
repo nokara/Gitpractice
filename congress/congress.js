@@ -9,7 +9,6 @@ let democrats = representatives.filter(rep => rep["party"] == "D")
 
 const congressGrid = document.querySelector('.congressGrid')
 
-
 ///// button stuff ///////
 const repubButton = document.querySelector('#republicans')
 const demButton = document.querySelector('#democrats')
@@ -32,18 +31,19 @@ seniorityButton.addEventListener('click', () => senioritySort())
 
 /////////// functions //////////////
 function populateCongressDiv(simplifiedList) {
+    
     removeChildren(congressGrid)
     simplifiedList.forEach(person => {
+        //console.log(person)
         let personDiv = document.createElement('div')
         personDiv.className = 'figureDiv' 
         let personFig = document.createElement('figure')
         let figImg = document.createElement('img')
         let figCaption = document.createElement('figcaption')
-
-        let partyIcon = document.createElement('i')
-        if (person.party === 'R') partyIcon.className = 'fas fa-republican'
-        if (person.party === 'D') partyIcon.className = 'fas fa-democrat'
-        //if (person.party === 'ID') partyIcon.className = 'fas fa-mitten'
+        PartyImg(person)
+        let partyIcon = document.createElement('img')
+        partyIcon.src = PartyImg(person)
+        partyIcon.className = "icon"
 
         figImg.src = person.imgURL
         figCaption.textContent = person.name
@@ -51,10 +51,17 @@ function populateCongressDiv(simplifiedList) {
         personFig.appendChild(figImg)
         personFig.appendChild(figCaption)
         personDiv.appendChild(personFig)
+        personDiv.appendChild(partyIcon)
         congressGrid.appendChild(personDiv)
     })
 }
 
+function PartyImg(data){
+    //console.log(data.party)
+    let letter = data.party
+    let url = `../images/${letter}.svg`
+    return url
+}
 
 function getSimplifiedPeople(peopleList) {
     return peopleList.map(person => {
@@ -75,20 +82,4 @@ function senioritySort() {
     populateCongressDiv(getSimplifiedPeople(senators).sort((a, b) => a.seniority - b.seniority).reverse())
 }
 
-//SCROLL
-toTop = document.getElementById("toTop");
 
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction( {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-}
-
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;

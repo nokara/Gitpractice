@@ -8,7 +8,7 @@ export function getLastNumber(url) {
 }
 
 export function removeChildren(container) {
-    while (container.firstChild) {
+   while (container.firstChild) {
         container.removeChild(container.firstChild)
     }
 }
