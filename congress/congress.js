@@ -6,6 +6,10 @@ let republicans = representatives.filter(rep => rep["party"] == "R")
 let democrats = representatives.filter(rep => rep["party"] == "D")
 // let independents = representatives.filter(rep => rep["party"] == "ID")
 
+senators.forEach(element => {
+    console.log(element.party)
+});
+
 
 const congressGrid = document.querySelector('.congressGrid')
 

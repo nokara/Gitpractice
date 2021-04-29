@@ -65,8 +65,8 @@ body {
 .figureDiv {
     margin: 12px 8px;
     padding: 6px;
-    border: 2px red solid;
-    box-shadow: 3px 3px 2px rgb(126, 3, 3);
+    border: 4px navy solid;
+    box-shadow: 3px 3px 2px rgb(3, 3, 46);
 background-color: rgb(225, 239, 247);
 }
 
@@ -84,10 +84,10 @@ figcaption {
     font-weight: 600;
     font-style: normal;
     margin-top: .2em;
-    color: navy;
+    color: rgb(212, 14, 14);
 }
 
-.fa-republican {
+/* .fa-republican {
     color: red;
 }
 
@@ -97,7 +97,7 @@ figcaption {
 
 .fa-mitten {
     color: green;
-}
+} */
 
 
 h1{
@@ -134,8 +134,22 @@ h1{
 
  button:hover {
      color: red;
+     background-color: rgb(250, 245, 216);
  }
 
+.icon {
+    width: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+}
+
+#top-scroll {
+    color: navy;
+    background-color: gold;
+    padding: 5px;
+}
 
  html {
     scroll-behavior: smooth;
