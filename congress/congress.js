@@ -38,7 +38,6 @@ function populateCongressDiv(simplifiedList) {
     
     removeChildren(congressGrid)
     simplifiedList.forEach(person => {
-        //console.log(person)
         let personDiv = document.createElement('div')
         personDiv.className = 'figureDiv' 
         let personFig = document.createElement('figure')
@@ -60,8 +59,8 @@ function populateCongressDiv(simplifiedList) {
     })
 }
 
+////ICON
 function PartyImg(data){
-    //console.log(data.party)
     let letter = data.party
     let url = `../images/${letter}.svg`
     return url
@@ -80,7 +79,7 @@ function getSimplifiedPeople(peopleList) {
     })
 }
 
-//console.log(getSimplifiedPeople(republicans))
+
 
 function senioritySort() {
     populateCongressDiv(getSimplifiedPeople(senators).sort((a, b) => a.seniority - b.seniority).reverse())
